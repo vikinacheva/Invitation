@@ -1,0 +1,41 @@
+﻿@model Invitation.Models.Responses
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    <form asp-action="Form" method="post">
+        <p>
+            <label asp-for="FullName">Your name:</label>
+            <input asp-for="FullName" />
+        </p>
+        <p>
+            <label asp-for="Email">Your email:</label>
+            <input asp-for="Email" />
+        </p>
+        <p>
+            <label asp-for="Number">Your phone:</label>
+            <input asp-for="Number" />
+        </p>
+        <p>
+            <label>Will you attend?</label>
+            <select asp-for="Attendance">
+                <option value="">Choose an option: </option>
+                <option value="true">Yes, I'll be there</option>
+                <option value="false">No, I won't come</option>
+            </select>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <button type="button" class="btn btn-primary" onclick="location.href='./Home'">Back to home</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='./Home/ListResponses'">Back to attendance list</button>
+    </div>
+</body>
+</html>
+
